@@ -32,9 +32,9 @@ public class Genre implements Serializable {
     @ManyToMany(mappedBy = "genres")
     private List<Album> albums = new ArrayList<>();
     @ManyToOne
-    @JoinColumn(name = "genre_id")
-    private Genre genre;
-    @OneToMany(mappedBy = "genre")
+    @JoinColumn(name = "genreParent_id")
+    private Genre genreParent;
+    @OneToMany(mappedBy = "genreParent")
     private List<Genre> sousGenres = new ArrayList<>();
 
     public Long getId() {
