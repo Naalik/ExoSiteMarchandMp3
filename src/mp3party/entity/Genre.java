@@ -31,6 +31,7 @@ public class Genre implements Serializable {
     
     @ManyToMany(mappedBy = "genres")
     private List<Album> albums = new ArrayList<>();
+    //auto-jointure pour hiérarchiser les éléments d'une table
     @ManyToOne
     @JoinColumn(name = "genreParent_id")
     private Genre genreParent;
